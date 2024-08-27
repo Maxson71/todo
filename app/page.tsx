@@ -1,10 +1,10 @@
-import TodoList from '@/components/TodoList';
+import TodoList from "@/components/TodoList";
 
 export default function Home() {
   return (
-      <div>
-        <h1>Todo List</h1>
-        <TodoList />
-      </div>
+    <main>
+      <h1 className="p-4">Todo List</h1>
+      <TodoList />
+    </main>
   );
 }
