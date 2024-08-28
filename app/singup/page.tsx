@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { login } from "./actions";
+import { signup } from "./actions";
 
 export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +24,7 @@ export default function LoginPage() {
           className="flex flex-col gap-1 max-w-96"
           onSubmit={(e) => {
             e.preventDefault();
-            handleSubmit(login, new FormData(e.currentTarget));
+            handleSubmit(signup, new FormData(e.currentTarget));
           }}
         >
           <label htmlFor="email">Email:</label>
@@ -37,8 +37,15 @@ export default function LoginPage() {
             minLength={6}
             required
           />
-          {error && <p className="text-red-500">{error}</p>}{" "}
-          <button type="submit">Log in</button>
+          <label htmlFor="password">Repeat Password:</label>
+          <input
+            id="repeat_password"
+            name="password"
+            type="password"
+            required
+          />
+          {error && <p className="text-red-500">{error}</p>}
+          <button type="submit">Sign up</button>
         </form>
       </div>
     </main>
